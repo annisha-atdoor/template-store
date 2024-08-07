@@ -20,20 +20,56 @@
   flex-direction: row;
   margin-left: left;
   text-align: center;
-  margin-top: -5%;
+  margin-top: -4%;
 }
 .horoscope-table {
   border-collapse: collapse;
   width: 30%;
-  margin-right: 5%;
+  margin-right: 4%;
   margin-left: 5%;
   text-align: center;
   margin-top: 12px;
 }
 .horoscope-table td {
   border: 2px solid brown;
-  width:24%;
-  height: 32px;
+  width: 24%;
+  height: 48px;
   text-align: center;
   color: rgb(27, 19, 81);
+  margin-right: 40%;
+}
+.horoscope-table, .horoscope-table th, .horoscope-table td {
+  border-collapse: collapse;
+  font-size: 16px;
+  padding: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+table, th, td {
+  border: none;
+  border-collapse: collapse;
+  color: rgb(7, 7, 7);
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 15px;
+  padding: 5px;
+  text-align: left;
+  white-space: nowrap;
+  margin-right: 40%;
+} 
+
+
+.horoscope-table th {
+  text-align: left;
+  font-weight: bold;
+  color: rgb(27, 19, 81);
+}
+
+.horoscope-table td {
+  border: 2px solid brown;
+  width: 24%;
+  height: 48px;
+  text-align: center;
+  color: rgb(27, 19, 81);
+  margin-right: 40%;
 }

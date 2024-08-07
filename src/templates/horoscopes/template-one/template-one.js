@@ -1,44 +1,47 @@
 import React from 'react';
-import HoroscopeBoxes from "../horoscope-boxes/horoscope-boxes.js";
-import './template-one.styled';
-import images from './images/logo.svg';
-import './template-one.css'; 
+import HoroscopeBoxes from '../horoscope-boxes/horoscope-boxes';
 import '../horoscope-boxes/horoscope-boxes.css';
-import data from '../data/english.json'; 
+import {
+  MainContainer,
+  Header,
+  MidHeading,
+ 
+} from './template-one.styled';
+import './template-one.css';
+import images from './images/logo.svg';
 
 const formatHeight = (height) => {
   const [feet, inches] = height.split('.');
   return `${feet}'${inches}"`;
 };
 
-const TemplateOne = ({
-  birthDetails = data.birthDetails, 
-  horoscopeDetails = data.horoscopeDetails, 
-  familyDetails = data.familyDetails, 
-  contactDetails = data.contactDetails, 
-  personalInfo = data.personalInfo, 
-  ownHouse = data.ownHouse, 
-  qualification = data.qualification, 
-  occupation = data.occupation, 
-  residentialAddress = data.residentialAddress
+const HoroscopeOne = ({
+  birthDetails,
+  horoscopeDetails,
+  familyDetails,
+  contactDetails,
+  personalInfo,
+  ownHouse,
+  qualification,
+  occupation,
+  residentialAddress
 }) => {
   return (
-    <div className="a4-template-one">
-      <div className="background-image-template-one">
-        <div className="main-header-template-one">
-          <div className="top-heading-template-one">
-            <div className="heading-template-one">
-              <img src={images} alt="Canvas Logo" className="logo-image-template-one" />
+    <div className='a4-template-one'>
+    <MainContainer backgroundImage="/path/to/your/background-image.jpg">
+      <Header>
+        <div className="heading-template-one">
+          <img src={images} alt="Canvas Logo" className="logo-image-template-one" />
               Vasavi Sahayam <br /> Angala Parameshwari Amman Thunai
-            </div>
-            <div className="sub-heading-template-one">
+        </div>
+        <div className="sub-heading-template-one">
               Janani Janma Sowkyanam Varathanee Kulasumbathaam<br />
               Padhavi Pooorva Punyanaam Likyathe Janma Pathrika
-            </div>
           </div>
-          <div className="personal-details-template-one">
-            <table>
-              <tbody className="table-template-one">
+      </Header>
+      <div className="personal-details-template-one">
+         <table className="table-template-one">
+              <tbody >
                 <tr>
                   <th scope="row">Date of Birth</th>
                   <td>{birthDetails.dob.dateOfBirth}</td>
@@ -82,18 +85,21 @@ const TemplateOne = ({
             S/o Late <b> Mr. Ponmani - Mrs. Porselvi</b>
           </div>
           <div className="second-name-template-one">
-            <h3 className="name-template-one">Kumaran .<b> Kamalesh P</b></h3>
+            <p className="name-template-one">Kumaran.<b> Kamalesh P</b></p>
           </div>
           <div className="third-line-template-one">
             <h5>Gothram : Shiva Gothram &nbsp;&nbsp; Madhulam : dfdfdsa</h5>
           </div>
-        </div>
-        <HoroscopeBoxes />
-        <div className="mid-heading-template-one">
+
+      <HoroscopeBoxes />
+
+      <MidHeading className="mid-heading">
+      <div className="mid-heading-template-one">
           <h3><span className="blue-text">Mars </span> <span className="brown-text">Dasa Balance : 6months</span></h3>
         </div>
-        <div className="family-details-template-one">
-          <table className="family-table-template-one">
+      </MidHeading>
+      <div className="family-details-template-one">
+      <table className="table-template-one">
             <tbody>
               <tr>
                 <td>
@@ -117,6 +123,7 @@ const TemplateOne = ({
             </tbody>
           </table>
         </div>
+
         <div className="residential-address-template-one">
           <p className="address-template-one">Address: {residentialAddress.address} {residentialAddress.landmark} {residentialAddress.hometown}, {residentialAddress.city}, {residentialAddress.stateName} {residentialAddress.pincode} {residentialAddress.nationality}</p>
         </div>
@@ -126,9 +133,9 @@ const TemplateOne = ({
         <div className="email-address-template-one">
           <p className="address-template-one">Email: {contactDetails.emailId}</p>
         </div>
-      </div>
+    </MainContainer>
     </div>
   );
 };
 
-export default TemplateOne;
+export default HoroscopeOne;

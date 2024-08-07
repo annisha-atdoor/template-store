@@ -1,23 +1,38 @@
 import React, { useState } from 'react';
-import './templates/horoscopes/template-one/index.js'
-import data from './data/english.json';
-import DataTable from './templates/horoscopes/template-one/template-one.styled.js';
+import TemplateOne from './templates/horoscopes/template-one/index.js';
+import TemplateTwo from './templates/horoscopes/template-two/index.js';
+import jsonData from './data/english.json'; 
+
 const App = () => {
-  const [selectedTemplate, setSelectedTemplate] = useState('template-one');
+  const [selectedTemplate, setSelectedTemplate] = useState('');
 
   const handleTemplateChange = (event) => {
     setSelectedTemplate(event.target.value);
   };
 
+  const renderTemplate = () => {
+    switch (selectedTemplate) {
+      case 'templateOne':
+        return <TemplateOne {...jsonData} />;
+      case 'templateTwo':
+        return <TemplateTwo {...jsonData} />;
+      default:
+        return null;
+    }
+  };
+
   return (
-    <div>
-      <div>
-        <label htmlFor="template-select">Select Template:</label>
-        <select id="template-select" value={selectedTemplate} onChange={handleTemplateChange}>
-          <option value="template-one">Template One</option>
+    <div className="App">
+      <div className="template-dropdown">
+        <label htmlFor="template-select">Choose a template: </label>
+        <select id="template-select" onChange={handleTemplateChange} value={selectedTemplate}>
+          <option value="">Select a template</option>
+          <option value="templateOne">Template One</option>
+          <option value="templateTwo">Template Two</option>
         </select>
       </div>
-      <DataTable selectedTemplate={selectedTemplate} data={data} />
+
+      {renderTemplate()}
     </div>
   );
 };

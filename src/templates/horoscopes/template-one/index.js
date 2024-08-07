@@ -1,15 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import TemplateOne from './template-one';
+import HoroscopeOne from './template-one';
 import data from '../data/english.json'; 
-import reportWebVitals from '../../../reportWebVitals';
+import './template-one.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const Index = () => {
+  return (
+    <HoroscopeOne
+      birthDetails={data.birthDetails}
+      horoscopeDetails={data.horoscopeDetails}
+      familyDetails={data.familyDetails}
+      contactDetails={data.contactDetails}
+      personalInfo={data.personalInfo}
+      ownHouse={data.ownHouse}
+      qualification={data.qualification}
+      occupation={data.occupation}
+      residentialAddress={data.residentialAddress}
+    />
+  );
+};
 
-root.render(
-  <React.StrictMode>
-    <TemplateOne data={data} />
-  </React.StrictMode>
-);
-
-reportWebVitals();
+export default Index;

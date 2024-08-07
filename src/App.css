@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -35,4 +35,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+.App {
+  text-align: left;
+  padding: 20px; 
+}
+
+.template-dropdown {
+  display: flex;
+  justify-content: flex-start; 
+  margin-bottom: 20px;
+}
+
+.template-dropdown label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.template-dropdown select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
 }

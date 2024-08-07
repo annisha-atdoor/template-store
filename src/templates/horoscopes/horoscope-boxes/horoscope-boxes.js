@@ -1,6 +1,6 @@
 import React from 'react';
-import { table1, table2 } from './boxes'; 
-import imageBetweenTables from './image/imageBetweenTables.svg'; 
+import { table1, table2 } from './boxes';
+import imageBetweenTables from './image/imageBetweenTables.svg';
 
 const renderCellContent = (value) => {
   if (Array.isArray(value)) {
@@ -18,14 +18,13 @@ const renderCellContent = (value) => {
 const HoroscopeBoxes = () => {
   return (
     <div className="horoscope-container">
-      <table className="horoscope-table" style={{ width: '34%' }}>
+      <table className="horoscope-table">
         <tbody>
           {table1.map((row, rowIndex) => (
             <tr key={rowIndex}>
               {row.map((cell, cellIndex) => (
                 <td
                   key={cellIndex}
-                  className="table"
                   colSpan={cell.colspan}
                   rowSpan={cell.rowspan}
                 >
@@ -36,15 +35,14 @@ const HoroscopeBoxes = () => {
           ))}
         </tbody>
       </table>
-      <img src={imageBetweenTables} alt="Image Between Tables" />
-      <table className="horoscope-table" style={{ width: '33%' }}>
+      <img src={imageBetweenTables} alt="Image Between Tables" className="image-between-tables" />
+      <table className="horoscope-table">
         <tbody>
           {table2.map((row, rowIndex) => (
             <tr key={rowIndex}>
               {row.map((cell, cellIndex) => (
                 <td
                   key={cellIndex}
-                  className="table"
                   colSpan={cell.colspan}
                   rowSpan={cell.rowspan}
                 >
