@@ -3,7 +3,7 @@ import TemplateOne from './templates/horoscopes/template-one/index.js';
 import TemplateTwo from './templates/horoscopes/template-two/index.js';
 import TemplateThree from './templates/horoscopes/template-three/index.js';
 import TemplateFour from './templates/horoscopes/template-four/index.js';
-import TemplateFive from './templates/horoscopes/template-five/index.js'; // Import TemplateFive
+import TemplateFive from './templates/horoscopes/template-five/index.js'; 
 import jsonData from './data/english.json';
 import './App.css';
 
@@ -24,7 +24,7 @@ const App = () => {
         return <TemplateThree {...jsonData} />;
       case 'templateFour':
         return <TemplateFour {...jsonData} />;
-      case 'templateFive': // Add case for TemplateFive
+      case 'templateFive': 
         return <TemplateFive {...jsonData} />;
       default:
         return null;
@@ -41,7 +41,7 @@ const App = () => {
           <option value="templateTwo">Template Two</option>
           <option value="templateThree">Template Three</option>
           <option value="templateFour">Template Four</option>
-          <option value="templateFive">Template Five</option> {/* Add Template Five option */}
+          <option value="templateFive">Template Five</option> 
         </select>
       </div>
 
