@@ -84,12 +84,20 @@
   .table1-t2{
     color: rgb(7, 7, 7);
   }
-  .name-t2 {
-    margin-top: 3%;
-    text-align: center;
-  }
-  
  
+.personal-t2{
+    color:black;
+}
+.name-qua-t2 {
+    margin-left: 23%;
+    margin-top: -2%;
+    color: black;
+  }
+  .name-third-t2 {
+    margin-left: 41%;
+    margin-top: -2%;
+    color: black;
+  }
 .address-t2 {
     font-size: 13px;
     margin-top: 8px;
@@ -115,14 +123,19 @@
   .brown-text-t2{
     color: rgb(7, 7, 7);
   }
-  p{
+
+  .t2-third{
     font-size: 20px;
+    color: #000;
+  }
+  .t2-address{
+    color: black;
   }
   img {
     width: 100px;
   }
   
-  table, th, td {
+  .a2-table, .a2-th, .a2-td {
     border: none;
     border-collapse: collapse;
     color: rgb(7, 7, 7);
@@ -184,24 +197,25 @@
     margin-bottom:10%;
   }
   .family-details-t2 {
-    margin-left: -9%;
+    margin-left: -3%;
     margin-right: 96%;
     display: flex;
     margin-top: -11px;
-    line-height: 1.6;
+    line-height: 1.8;
   }
+  
   .family-detail.left-t2 {
-    margin-left: 28%;
+    margin-left: 9%;
   }
+
 
   .residential-address-t2 {
     text-align: center;
     color: rgb(7, 7, 7);
-    margin-top: -2%;
+    margin-top: 0%;
     margin-bottom: -2%;
+    margin-left: 3%;
   }
-  
-  
   .email-address-t2{
     text-align: center;
     color: rgb(7, 7, 7);
@@ -209,11 +223,12 @@
     margin-bottom: -1%;
   }
   
-  .contact-details-t2{
+  .contact-details-t2 {
     text-align: center;
     color: rgb(7, 7, 7);
-    margin-top: 0%; 
+    margin-top: 2%;
     margin-bottom: 0%;
+    margin-left: 2%;
   }
   p{
     font-size: 20px;
@@ -292,23 +307,18 @@
   
   .personal-detail-left-t2 {
     width: 50%;
-    margin-left: -16%;
+    margin-left: -2%;
     align-content: left;
   }
-  
   .personal-detail-right-t2 {
     width: 50%;
-    margin-right: -2%;
+    margin-right: -5%;
     align-content: left;
   }
-  .family-detail.left-t2{
-    margin-left: -35%;
-  }
-  
-  .family-detail.right-t2 {
     
-    margin-left: 236%;
-  
+ 
+.family-detail.right-t2 {
+    margin-left: 490%;
   }
   table {
     width: 100%; 
@@ -321,6 +331,7 @@
   .address-t2 {
     font-size: 13px;
     margin-top: 8px;
+    color: black;
   }
   
   th, td {
@@ -348,14 +359,14 @@
 }
 
 
-  .divider2-t2 {
+.divider2-t2 {
     height: 2px;
     background-color: #000;
     margin-left: 0%;
     margin-right: 0%;
     margin-top: -17%;
   }
-  
+
   .table-divider-t2 {
     border: 0;
     height: 2px;
@@ -363,7 +374,7 @@
     width: 100%;
     margin-left: -10p;
     margin-right: -10px;
-    margin-top: -12px;
+    margin-top: 4px;
     margin-bottom: 21px;
   }
   
@@ -419,8 +430,11 @@
 
   .middle-t2 {
     text-align: center;
+    color: black;
   }
   .third-t2 {
     margin-bottom: 10%;
     text-align: center;
+    padding-left: 17%;
+    color: black;
   }

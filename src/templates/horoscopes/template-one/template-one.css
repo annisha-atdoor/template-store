@@ -101,17 +101,21 @@
 .name-template-one {
   margin-top: 1%;
   color: rgb(27, 19, 81);
+  text-align: center;
+  margin-left: -4%;
 }
 .address-template-one {
   font-size: 14px;
-  margin-top: 1px;
+  margin-top: 13px;
   color: brown;
-  margin-left: 0%;
+  margin-left: 2%;
 }
 
 .contact-details-template-one {
-  margin-left: 21%;
+  margin-left: 20%;
+  text-align: center;
 }
+
 .below-heading-template-one {
   margin-top: 8px;
   font-size: 19px;
@@ -209,7 +213,7 @@ img {
   
 }
 
-table, th, td 
+.a1-table, .a1-th, .a1-td 
 {
  border: 2px solid brown;
  border-collapse: collapse;
@@ -246,12 +250,14 @@ table, th, td
   margin-bottom: 3%;
 }
 
-.email-address-template-one{
+.email-address-template-one {
   text-align: center;
   color: brown;
   margin-top: -2%;
   margin-bottom: -1%;
+  margin-left: 25%;
 }
+
 .contact-details-template-one{
   text-align: center;
   color: brown;
@@ -259,7 +265,7 @@ table, th, td
   margin-bottom: 0%;
 }
 .contact-details-template-one {
-  margin-left: 2%;
+  margin-left: 19%;
 }
 p{
   font-size: 17px;

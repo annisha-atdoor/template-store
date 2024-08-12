@@ -20,15 +20,7 @@
   flex-direction: row;
   margin-left: left;
   text-align: center;
-  margin-top: -4%;
-}
-.horoscope-table {
-  border-collapse: collapse;
-  width: 30%;
-  margin-right: 4%;
-  margin-left: 5%;
-  text-align: center;
-  margin-top: 12px;
+  margin-top: -2%;
 }
 .horoscope-table td {
   border: 2px solid brown;
@@ -51,7 +43,7 @@ table, th, td {
   color: rgb(7, 7, 7);
   overflow: hidden;
   white-space: nowrap;
-  font-size: 15px;
+  font-size: 16px;
   padding: 5px;
   text-align: left;
   white-space: nowrap;
@@ -72,4 +64,12 @@ table, th, td {
   text-align: center;
   color: rgb(27, 19, 81);
   margin-right: 40%;
+}
+.horoscope-table {
+  border-collapse: collapse;
+  width: 40%;
+  margin-right: 2%;
+  margin-left: 2%;
+  text-align: center;
+  margin-top: 12px;
 }

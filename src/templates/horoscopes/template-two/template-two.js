@@ -45,7 +45,7 @@ const HoroscopeTwo = ({
           </div>
           <div className="details-container-t2">
             <div className="personal-detail-left-t2">
-              <table>
+              <table  className='personal-t2'>
                 <tbody>
                   <tr>
                     <th scope="row">Date of Birth</th>
@@ -113,7 +113,7 @@ const HoroscopeTwo = ({
             S/o Late <b> Mr. Ponmani - Mrs. Porselvi</b>
           </div>
           <div className="third-line-t2">
-            <p className="name"><b> Kamalesh P</b></p>
+            <p className="name-third-t2"><b> Kamalesh P</b></p>
           </div>
           <hr className="table-divider-t2" />
         </div>
@@ -125,7 +125,7 @@ const HoroscopeTwo = ({
           <h3>Namadhayam : Kamalesh . P</h3>
         </div>
         <div className="third-t2">
-          <p>Gothram : Shiva Gothram &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Madhulam : dfdfdsa</p>
+          <p className='t2-third'>Gothram : Shiva Gothram &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Madhulam : dfdfdsa</p>
         </div>
         <div className="divider-t2"></div>
         <div className="family-details-t2">
@@ -175,8 +175,8 @@ const HoroscopeTwo = ({
       <div className="address-t2">
         Address
       </div>
-      <div className='name-t2'>
-      <p>{personalInfo.name}.{qualification.Education}.{qualification.fieldOfStudy}.({personalInfo.Profession})</p>
+      <div className='name-qua-t2'>
+      <p  className="t2-address">{personalInfo.name}.{qualification.Education}.{qualification.fieldOfStudy}.({personalInfo.Profession})</p>
       </div>
       <div className="residential-address-t2">
         <p className="address-t2"> {residentialAddress.address} {residentialAddress.landmark} {residentialAddress.hometown}, {residentialAddress.city}, {residentialAddress.stateName} {residentialAddress.pincode} {residentialAddress.nationality}</p>
