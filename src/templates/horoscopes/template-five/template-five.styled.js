@@ -150,7 +150,7 @@ export const FamilyDetail = styled.div`
   font-weight: bold;
   line-height: 16px;
 }
-
+  
  .tablet5{
     width: 100%;
     //  border-collapse: collapse;
