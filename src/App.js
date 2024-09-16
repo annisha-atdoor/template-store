@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import TemplateOne from './templates/horoscopes/template-one/index.js';
-import TemplateTwo from './templates/horoscopes/template-two/index.js';
-import TemplateThree from './templates/horoscopes/template-three/index.js';
+import TemplateTwo from './templates/horoscopes/template-two/index.js'; 
+import TemplateThree from './templates/horoscopes/template-three/index.js'; 
 import TemplateFour from './templates/horoscopes/template-four/index.js';
-import TemplateFive from './templates/horoscopes/template-five/index.js'; 
+import TemplateFive from './templates/horoscopes/template-five/index.js';
 import jsonData from './data/english.json';
 import './App.css';
 
@@ -20,20 +20,16 @@ const App = () => {
         return <TemplateOne {...jsonData} />;
       case 'templateTwo':
         return <TemplateTwo {...jsonData} />;
-      case 'templateThree':
+      case 'templateThree': 
         return <TemplateThree {...jsonData} />;
-      case 'templateFour':
+      case 'templateFour': 
         return <TemplateFour {...jsonData} />;
-      case 'templateFive': 
+        case 'templateFive': 
         return <TemplateFive {...jsonData} />;
       default:
         return null;
     }
   };
-
-
-
-  
 
   return (
     <div className="App">
@@ -44,11 +40,10 @@ const App = () => {
           <option value="templateOne">Template One</option>
           <option value="templateTwo">Template Two</option>
           <option value="templateThree">Template Three</option>
-          <option value="templateFour">Template Four</option>
+          <option value="templateFour">Template Four</option> 
           <option value="templateFive">Template Five</option> 
         </select>
       </div>
-
       {renderTemplate()}
     </div>
   );

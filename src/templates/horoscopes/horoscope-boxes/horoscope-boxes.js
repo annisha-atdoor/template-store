@@ -1,6 +1,29 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import { table1, table2 } from './boxes';
 import imageBetweenTables from './image/imageBetweenTables.svg';
+import {
+  HoroscopeContainer,
+  HoroscopeTable,
+  TableRow,
+  TableCell,
+  ImageBetweenTablesContainer,
+  defaultTheme,
+  templateTwoTheme,
+  templateThreeTheme,
+  GlobalStyle,
+} from './horoscope.styled';
+
+const getTheme = (template) => {
+  switch (template) {
+    case 'templateTwo':
+      return templateTwoTheme;
+    case 'templateThree':
+      return templateThreeTheme;
+    default:
+      return defaultTheme;
+  }
+};
 
 const renderCellContent = (value) => {
   if (Array.isArray(value)) {
@@ -15,46 +38,54 @@ const renderCellContent = (value) => {
   return value;
 };
 
-const HoroscopeBoxes = () => {
+const HoroscopeBoxes = ({ template }) => {
+  const theme = getTheme(template);
+
   return (
-    <div className="horoscope-container">
-      <table className="horoscope-table">
-        <tbody>
-          {table1.map((row, rowIndex) => (
-            <tr key={rowIndex}>
-              {row.map((cell, cellIndex) => (
-                <td
-                  key={cellIndex}
-                  colSpan={cell.colspan}
-                  rowSpan={cell.rowspan}
-                >
-                  {renderCellContent(cell.value)}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <img src={imageBetweenTables} alt="Image Between Tables" className="image-between-tables" />
-      <table className="horoscope-table">
-        <tbody>
-          {table2.map((row, rowIndex) => (
-            <tr key={rowIndex}>
-              {row.map((cell, cellIndex) => (
-                <td
-                  key={cellIndex}
-                  colSpan={cell.colspan}
-                  rowSpan={cell.rowspan}
-                >
-                  {renderCellContent(cell.value)}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <HoroscopeContainer className="horoscope-container">
+        <HoroscopeTable className="horoscope-table">
+          <tbody>
+            {table1.map((row, rowIndex) => (
+              <TableRow key={rowIndex}>
+                {row.map((cell, cellIndex) => (
+                  <TableCell
+                    key={cellIndex}
+                    colSpan={cell.colspan}
+                    rowSpan={cell.rowspan}
+                  >
+                    {renderCellContent(cell.value)}
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))}
+          </tbody>
+        </HoroscopeTable>
+
+        <ImageBetweenTablesContainer className="image-between-tables">
+          <img src={imageBetweenTables} alt="Image Between Tables" />
+        </ImageBetweenTablesContainer>
+
+        <HoroscopeTable className="horoscope-table">
+          <tbody>
+            {table2.map((row, rowIndex) => (
+              <TableRow key={rowIndex}>
+                {row.map((cell, cellIndex) => (
+                  <TableCell
+                    key={cellIndex}
+                    colSpan={cell.colspan}
+                    rowSpan={cell.rowspan}
+                  >
+                    {renderCellContent(cell.value)}
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))}
+          </tbody>
+        </HoroscopeTable>
+      </HoroscopeContainer>
+    </ThemeProvider>
   );
 };
-
 export default HoroscopeBoxes;

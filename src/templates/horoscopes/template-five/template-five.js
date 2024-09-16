@@ -1,6 +1,15 @@
 import React from 'react';
 import {
-  Container, InnerBorder
+  Container, InnerBorder,HeadingOneT5, HeadingT5,SubHeadingT5,FamilyDetails,
+  FamilyDetail,
+  DottedRow,
+  AdditionalDataT5,
+  NameOneT5,
+  NameTwoT5,
+  AddressT5,
+  ResidentialAddressT5,
+  ContactDetailsT5,
+  NamesT5,
 } from './template-five.styled';
 import './template-five.css';
 import logoImage from './images/logo.svg';
@@ -11,7 +20,6 @@ const formatHeight = (height) => {
   const [feet, inches] = height.split('.');
   return `${feet}'${inches}"`;
 };
-
 
 const HoroscopeFive = ({
     birthDetails,
@@ -25,192 +33,167 @@ const HoroscopeFive = ({
     residentialAddress
   }) => {
   return (
-    <Container className='a4-t5'>
-      <InnerBorder className="inner-border-t5">
-      <div className="main-header-t5">
+    <Container>
+      <InnerBorder>
+        <div className="main-header-t5">
           <div className="top-heading-t5">
             <div className="heading-container-t5">
-              <div className="heading-t5">
+              <HeadingT5>
                 <img src={logoImage} alt="Canvas Logo" className="logo-image-t5" />
-                Subamasthu<br/>
-                Sri Vasavi Sagayam
-              </div>
+                </HeadingT5>
+               <HeadingOneT5>
+              Subamasthu<br/>
+              Sri Vasavi Sagayam
+              </HeadingOneT5> 
             </div>
-            <div className="sub-heading-t5">
+             <SubHeadingT5>
               Janani Janma Sowkyanam Varathanee Kulasumbathaam<br />
               Padhavi Pooorva Punyanaam Likyathe Janma Pathrika
-            </div>
-            <div className="family-details-t5">
-            <div className="family-detail-left-t5">
-              <table>
-                <tbody>
-                <hr className="divider-t5"></hr>
-                  <tr>
-                    <th scope="row">Date of Birth : </th>
-                    <td>{birthDetails.dob.dateOfBirth}</td>
-                  </tr>
-                  <hr className="divider-t5"></hr>
-                  <tr>
-                    <th scope="row" >Tamil Year : </th>
-                    <td>{birthDetails.tamilYear}</td>
-                  </tr>
-                  <hr className="divider-t5"></hr>
-                  <tr>
-                    <th scope="row">Tamil Month : </th>
-                    <td>{birthDetails.tamilMonth}</td>
-                  </tr>
-                  <hr className="divider-t5"></hr>
-                  <tr>
-                    <th scope="row" >Tamil Date : </th>
-                    <td>{birthDetails.tamilDate}</td>
-                  </tr>
-                  <hr className="divider-t5"></hr>
-                  <tr>
-                    <th scope="row" >Day : </th>
-                    <td>{birthDetails.dob.day}</td>
-                  </tr>
-                  <hr className="divider-t5"></hr>
-                  <tr>
-                    <th scope="row" >Birth Time : </th>
-                    <td>{birthDetails.dob.time}</td>
-                  </tr>
-                  <hr className="divider-t5"></hr>
-                </tbody>
-              </table>
-            </div>
-            <div className="family-detail-right-t5">
-              <table>
-                <tbody>
-                <hr className="divider-one-t5"></hr>
-                  <tr>
-                    <th scope="row">Naaligai : </th>
-                    <td>{horoscopeDetails.naaligai}</td>
-                  </tr>
-                  <hr className="divider-one-t5"></hr>
-                  <tr>
-                    <th scope="row">Birth Star : </th>
-                    <td>{horoscopeDetails.BirthStar}</td>
-                  </tr>
-                  <hr className="divider-one-t5"></hr>
-                  <tr>
-                    <th scope="row">Rasi : </th>
-                    <td>{horoscopeDetails.rasi}</td>
-                  </tr>
-                  <hr className="divider-one-t5"></hr>
-                  <tr>
-                    <th scope="row">Thithi : </th>
-                    <td>{horoscopeDetails.thithi}</td>
-                  </tr>
-                  <hr className="divider-one-t5"></hr>
-                  <tr>
-                    <th scope="row">Lagnam : </th>
-                    <td>{horoscopeDetails.lagnam}</td>
-                  </tr>
-                  <hr className="divider-one-t5"></hr>
-                  <tr>
-                    <th scope="row">Place Of Birth : </th>
-                    <td>{birthDetails.dob.placeOfBirth}</td>
-                  </tr>
-                  <hr className="divider-one-t5"></hr>
-                </tbody>
-              </table>
-            </div>
+            </SubHeadingT5> 
+            <FamilyDetails>
+        <FamilyDetail className="left">
+        <table className='tablet5'>
+          <tbody className='tbody'>
+            <DottedRow>
+              <th className='row'>Date of Birth : </th>
+              <td className='td'>{birthDetails.dob.dateOfBirth}</td>
+            </DottedRow>
+            <DottedRow>
+              <th className='row'>Tamil Year : </th>
+              <td className='td'>{birthDetails.tamilYear}</td>
+            </DottedRow>
+            <DottedRow>
+              <th className='row'>Tamil Month : </th>
+              <td className='td'>{birthDetails.tamilMonth}</td>
+            </DottedRow>
+            <DottedRow>
+              <th className='row'>Tamil Date : </th>
+              <td className='td'>{birthDetails.tamilDate}</td>
+            </DottedRow>
+            <DottedRow>
+              <th className='row'>Day : </th>
+              <td className='td'>{birthDetails.dob.day}</td>
+            </DottedRow>
+            <DottedRow>
+              <th scope="row">Birth Time : </th>
+              <td className='td'>{birthDetails.dob.time}</td>
+            </DottedRow>
+          </tbody>
+        </table>
+      </FamilyDetail>
+      <FamilyDetail className="right">
+        <table  className='tablet5'>
+          <tbody className='tbody'>
+            <DottedRow>
+              <th className='row'>Naaligai : </th>
+              <td className='td'>{horoscopeDetails.naaligai}</td>
+            </DottedRow>
+            <DottedRow>
+              <th  className='row'>Birth Star : </th>
+              <td className='td'>{horoscopeDetails.BirthStar}</td>
+            </DottedRow>
+            <DottedRow>
+              <th  className='row'>Rasi : </th>
+              <td className='td'>{horoscopeDetails.rasi}</td>
+            </DottedRow>
+            <DottedRow>
+              <th  className='row'>Thithi : </th>
+              <td className='td'>{horoscopeDetails.thithi}</td>
+            </DottedRow>
+            <DottedRow>
+              <th  className='row'>Lagnam : </th>
+              <td className='td'>{horoscopeDetails.lagnam}</td>
+            </DottedRow>
+            <DottedRow>
+              <th className='row'>Place Of Birth : </th>
+              <td className='td'>{birthDetails.dob.placeOfBirth}</td>
+            </DottedRow>
+          </tbody>
+        </table>
+      </FamilyDetail>
+    </FamilyDetails>
           </div>
-         </div>
-
-     <div className="additional-data-t5">
-        <p className='name-t5'>
-        <b> Mr <span >{familyDetails.fatherName}- Mrs.{familyDetails.motherName}</span></b>
-        </p>
-        <p className='name-one-t5'>
-        For Them  Kumaran. <b><span >{personalInfo.name}</span></b>
-        </p>
-        <p className='name-two-t5'>
-        Mars Dasa balance -<span>{horoscopeDetails.dasaBalance}</span>
-        </p>
-      </div>
-      <HoroscopeBoxes/>
-      <div>
-      <div className='name-t5'>
-      <p> Name:<b>{personalInfo.name}.{qualification.Education}</b></p>
-      </div>
-      <div className="family-details-t5">
-     <div className="family-detail-left-t5">
-    <table>
-      <tbody>
-      <hr className="divider-t5"></hr>
-        <tr>
-          <th><b>Father</b> :</th>
-          <td>
-            {familyDetails.fatherAlive} - <b>Mother</b> : {familyDetails.motherAlive}
-          </td>
-        </tr>
-        <hr/>
-        <tr>
-          <th><b>Height</b> :</th>
-          <td>{formatHeight(familyDetails.height)}</td>
-        </tr>
-        <hr/>
-        <tr>
-          <th><b>Blood Group</b> :</th>
-          <td>{personalInfo.bloodGroup}</td>
-        </tr>
-        <hr/>
-        <tr>
-          <th><b>Complexion</b> :</th>
-          <td>{personalInfo.complextion}</td>
-        </tr>
-        <hr className="divider-t5"></hr>
-      </tbody>
-    </table>
-  </div>
-  <div className="family-detail-right-t5">
-    <table>
-      <tbody>
-      <hr className="divider-two-t5"></hr>
-        <tr>
-          <th><b>Brother</b> :</th>
-          <td>{familyDetails.siblings.brother.number} (Elder-{familyDetails.siblings.brother.marriageNum})</td>
-        </tr>
-        <hr/>
-        <tr>
-          <th><b>Education</b> :</th>
-          <td >{qualification.Education}</td>
-        </tr>
-        <hr/>
-        <tr>
-          <th><b>Profession</b> :</th>
-          <td>{personalInfo.Profession}</td>
-        </tr>
-        <hr/>
-        <tr>
-          <th><b>Income</b> :</th>
-          <td>{occupation.Income}</td>
-        </tr>
-        <hr className="divider-two-t5"></hr>
-      </tbody>
-    </table>
-          </div>
-          </div>
+             <AdditionalDataT5>
+              <b>Mr <span>{familyDetails.fatherName} - Mrs. {familyDetails.motherName}</span></b>
+            </AdditionalDataT5>
+            <NameOneT5>
+            <span className="unbold">For Them Kumaran. </span>
+             <span>{personalInfo.name}</span>
+           </NameOneT5>
+              <NameTwoT5>
+              Mars Dasa balance - {horoscopeDetails.dasaBalance}
+              </NameTwoT5> 
+          <HoroscopeBoxes/> 
+           <div>
+            <div className="name-t5">
+              Name : <b>{personalInfo.name}.{qualification.Education}</b>
+            </div>
+            <FamilyDetails>
+        <FamilyDetail className="left">
+        <table className='tablet5'>
+          <tbody className='tbody'>
+            <DottedRow>
+            <th className='row'>Father : </th>
+              <td className='td'>
+                {familyDetails.fatherAlive} - Mother: {familyDetails.motherAlive}
+              </td>
+            </DottedRow>
+            <DottedRow>
+            <th className='row'> Height : </th>
+            <td className="td">{formatHeight(familyDetails.height)}</td>
+            </DottedRow>
+            <DottedRow>
+            <th className='row' >Blood Group : </th>
+            <td className="td">{personalInfo.bloodGroup}</td>
+            </DottedRow>
+            <DottedRow>
+            <th className='row'>Complexion : </th>
+            <td className="td">{personalInfo.complextion}</td>
+            </DottedRow>
+          </tbody>
+        </table>
+      </FamilyDetail>
+      <FamilyDetail className="right">
+        <table  className='tablet5'>
+          <tbody className='tbody'>
+            <DottedRow>
+            <th  className='row'>Brother : </th>
+              <td className="td">
+                {familyDetails.siblings.brother.number} (Elder-{familyDetails.siblings.brother.marriageNum})
+              </td>
+              </DottedRow>
+            <DottedRow>
+            <th className='row'>Education : </th>
+            <td className="td">{qualification.Education}</td>
+            </DottedRow>
+            <DottedRow>
+            <th className='row'>Profession : </th>
+            <td className="td">{personalInfo.Profession}</td>
+            </DottedRow>
+            <DottedRow>
+            <th className='row'>Income : </th>
+            <td className="td">{occupation.Income}</td>
+            </DottedRow>
+          </tbody>
+        </table>
+      </FamilyDetail>
+    </FamilyDetails>
+        </div> 
         </div>
-      </div>
-      <div className="address-t5">
-        Address
-      </div>
-      <div className='bottom-t5'>
-        <div className='name-one-t5'>
-          <p>{personalInfo.name}.{qualification.Education}.{qualification.fieldOfStudy}.({personalInfo.Profession})</p>
-        </div>
-        <div className="residential-address-t5">
-          <p className="full-address-t5">{residentialAddress.address} {residentialAddress.landmark} {residentialAddress.hometown} {residentialAddress.stateName} {residentialAddress.pincode} {residentialAddress.nationality}</p>
-        </div>
-        <div className="contact-details-t5">
-          <p className="phone-number-t5">&nbsp;&nbsp;&nbsp;&nbsp;Mobile: {contactDetails.contactNumber} &nbsp;&nbsp;&nbsp;&nbsp; WhatsApp Number: {contactDetails.whatsappNumber}</p>
-        </div>
-      </div>
+         <AddressT5>
+          Address
+        </AddressT5>
+          <NamesT5>
+             {personalInfo.name}.{qualification.Education}.{qualification.fieldOfStudy}.({personalInfo.Profession})
+          </NamesT5>
+          <ResidentialAddressT5>
+             {residentialAddress.address} {residentialAddress.landmark} {residentialAddress.hometown} {residentialAddress.stateName} {residentialAddress.pincode} {residentialAddress.nationality}
+            </ResidentialAddressT5>
+           <ContactDetailsT5>
+          Mobile: {contactDetails.contactNumber} &nbsp;&nbsp;&nbsp;&nbsp; WhatsApp Number: {contactDetails.whatsappNumber}
+          </ContactDetailsT5>  
       </InnerBorder>
     </Container>
   );
 };
-
 export default HoroscopeFive;

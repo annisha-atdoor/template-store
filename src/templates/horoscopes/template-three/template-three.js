@@ -1,199 +1,199 @@
-import React, { useState } from 'react';
+import React from 'react';
+import HoroscopeBoxes from '../horoscope-boxes/horoscope-boxes';
+import '../horoscope-boxes/horoscope-boxes.css';
 import logoImage from './images/logo.svg';
-import HoroscopeBoxes from "../horoscope-boxes/horoscope-boxes.js";
-import {
-  MainContainer,
-  Header,
-} from './template-three.styled'; 
-import './template-three.css'; 
+import { 
+  Container, 
+  InnerBorder, 
+  MainHeader, 
+  DetailsContainer, 
+  Divider, 
+  FamilyDetails, 
+  Bottom,
+  Heading,
+  T3SubHeading,
+  T3AdditionalData,
+  Third,
+  T3Divider,
+  Address,
+  T3Third,
+  T3AdditionalDatas,
+  T3Bottom,
+  T3ResidentialAddress,
+  T3ContactDetails
+
+
+} from './template-three.styled';
+
 
 const formatHeight = (height) => {
   const [feet, inches] = height.split('.');
   return `${feet}'${inches}"`;
 };
 
-const HoroscopeThree = ({
-
+const HoroscopeThree= ({
   birthDetails,
   horoscopeDetails,
   familyDetails,
   contactDetails,
   personalInfo,
-  ownHouse,
   qualification,
   occupation,
   residentialAddress
 }) => {
-  const [selectedGender, setSelectedGender] = useState('male');
-
-  const handleGenderChange = (event) => {
-    setSelectedGender(event.target.value);
-  };
-
   return (
-    <MainContainer className="a4-t3">
-      <Header className="inner-border">
-        <div className="main-header-t3">
-          <div className="top-heading-t3">
-            <div className="heading-container-t3">
-            <div className="heading-t3">
-                <img src={logoImage} alt="Canvas Logo" className="logo-image-t3" />
-                Subamasthu<br/>
-                Sri Vasavi Sagayam
-              </div>
-            </div>
-            <div className="sub-heading-t3">
-              Janani Janma Sowkyanam Varathanee Kulasumbathaam<br />
-              Padhavi Pooorva Punyanaam Likyathe Janma Pathrika
-            </div>
+    <Container>
+      <InnerBorder>
+        <MainHeader>
+            <div className="heading-container">
+            <Heading>
+                <img src={logoImage} alt="Canvas Logo" className="logo-image" />
+                  <span className="unbold">  Subamasthu<br/>Sri Vasavi Sagayam</span>
+             </Heading>
+            <T3SubHeading>
+                 <span className="unbold"> Janani Janma Sowkyanam Varathanee Kulasumbathaam</span><br/>
+                    <span className="unbold">Padhavi Pooorva Punyanaam Likyathe Janma Pathrika</span> 
+              </T3SubHeading>
           </div>
-          <div className="details-container-t3">
-            <div className="personal-detail-left-t3">
-              <table>
-                <tbody className='personal-t3'>
-                  <tr >
-                    <th scope="row">Date of Birth : </th>
-                    <td className="dotted-row">{birthDetails.dob.dateOfBirth}</td>
-                  </tr>
-                  <tr >
-                    <th scope="row" >Tamil Year</th>
-                    <td className="dotted-row">{birthDetails.tamilYear}</td>
-                  </tr>
-                  <tr >
-                    <th scope="row">Tamil Month</th>
-                    <td className="dotted-row">{birthDetails.tamilMonth}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" >Tamil Date</th>
-                    <td className="dotted-row">{birthDetails.tamilDate}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" >Day</th>
-                    <td className="dotted-row">{birthDetails.dob.day}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" >Birth Time</th>
-                    <td className="dotted-row">{birthDetails.dob.time}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="personal-detail-right.t3">
-              <table>
-                <tbody>
-                  <tr>
-                    <th scope="row">Naaligai</th>
-                    <td className="dotted-row">{horoscopeDetails.naaligai}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Birth Star</th>
-                    <td className="dotted-row">{horoscopeDetails.BirthStar}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Rasi</th>
-                    <td className="dotted-row">{horoscopeDetails.rasi}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Thithi</th>
-                    <td className="dotted-row">{horoscopeDetails.thithi}</td>
-                  </tr>
-                  <tr >
-                    <th scope="row">Lagnam</th>
-                    <td className="dotted-row">{horoscopeDetails.lagnam}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Place Of Birth</th>
-                    <td className="dotted-row">{birthDetails.dob.placeOfBirth}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        </MainHeader>
+        <DetailsContainer>
+          <div className="personal-detail left">
+            <table className='tablet3'>
+              <tbody className='tbodyt3'>
+                <tr className='trt3'>
+                  <th className='rowt3'>Date of Birth : </th>
+                  <td className='columnt3'>{birthDetails.dob.dateOfBirth}</td>
+                </tr>
+                <tr className='trt3'>
+                  <th className='rowt3'>Tamil Year</th>
+                  <td className='columnt3'>{birthDetails.tamilYear}</td>
+                </tr>
+                <tr className='trt3'>
+                  <th className='rowt3'>Tamil Month</th>
+                  <td className='columnt3'>{birthDetails.tamilMonth}</td>
+                </tr>
+                <tr className='trt3'>
+                  <th className='rowt3' >Tamil Date</th>
+                  <td className='columnt3'>{birthDetails.tamilDate}</td>
+                </tr>
+                <tr className='trt3'>
+                  <th className='rowt3'>Day</th>
+                  <td className='columnt3'>{birthDetails.dob.day}</td>
+                </tr>
+                <tr className='trt3'>
+                  <th className='rowt3'>Birth Time</th>
+                  <td className='columnt3'>{birthDetails.dob.time}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </div>
-
-        <div className="additional-data-t3">
-          <p className='t3-additional-data'>
-          Mr <b><span className="dotted-underline">{familyDetails.fatherName}- Mrs.{familyDetails.motherName}</span></b> For Them   Kumaran.
-        </p>
-        </div>
-        <div className="second-name-t3">
-        <p className="name-t3">
-          <b><span className="dotted-underline">{personalInfo.name}</span></b> Mars Dasa balance - <b><span className="dotted-underline">{horoscopeDetails.dasaBalance}</span></b>.
-        </p>
-      </div>
+          <div className="personal-detail right">
+            <table className='tablet3' >
+              <tbody  className='tbodyt3'>
+                <tr  className='trt3'>
+                  <th className='rowt3'>Naaligai</th>
+                  <td className='columnt3'>{horoscopeDetails.naaligai}</td>
+                </tr>
+                <tr className='trt3'>
+                  <th className='rowt3'>Birth Star</th>
+                  <td className='columnt3'>{horoscopeDetails.BirthStar}</td>
+                </tr>
+                <tr className='trt3'>
+                  <th className='rowt3' >Rasi</th>
+                  <td className='columnt3'>{horoscopeDetails.rasi}</td>
+                </tr>
+                <tr className='trt3'>
+                  <th className='rowt3'>Thithi</th>
+                  <td className='columnt3'>{horoscopeDetails.thithi}</td>
+                </tr>
+                <tr className='trt3'>
+                  <th className='rowt3'>Lagnam</th>
+                  <td className='columnt3'>{horoscopeDetails.lagnam}</td>
+                </tr>
+                <tr  className='trt3'>
+                  <th className='rowt3'>Place Of Birth</th>
+                  <td className='columnt3'>{birthDetails.dob.placeOfBirth}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </DetailsContainer>
+        <T3AdditionalData>
+        <div className="second-name">
+            Mr <b><span className="dotted-underline">{familyDetails.fatherName}- Mrs.{familyDetails.motherName}</span></b> For Them Kumaran.
+        </div>   
+        </T3AdditionalData>
+        <T3AdditionalDatas>
+                     <b><span className="dotted-underline">{personalInfo.name}</span></b> Mars Dasa balance - <b><span className="dotted-underline">{horoscopeDetails.dasaBalance}</span></b>.
+        </T3AdditionalDatas>
         <HoroscopeBoxes />
-
-      <div className="third-t3">
-          <p className='t3-third'>Gothram : Shiva Gothram &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Madhulam : dfdfdsa</p>
-      </div>
-        <div className="divider-t3"></div>
-        <div className="family-details-t3">
-          <div className="family-detail left-t3">
-            <table>
-              <tbody>
-                <tr>
-                    <th> <b>Father</b> :</th>
-                  <td  className="dotted-row">
-                    {familyDetails.fatherAlive} - <b>Mother</b> : {familyDetails.motherAlive}
-                  </td>
+        <T3Third>
+            <p>Gothram: Shiva Gothram &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Madhulam: dfdfdsa</p>
+        </T3Third>
+        <Divider />
+        <FamilyDetails>
+          <div className="family-detail left">
+            <table className='tablet3'>
+              <tbody className='tbodyt3'>
+                <tr className='trt3'>
+                  <th className='rowt3'><b>Father</b> :</th>
+                  <td className='columnt3'>{familyDetails.fatherAlive} - <b>Mother</b> : {familyDetails.motherAlive}</td>
                 </tr>
-                <tr>
-                    <th><b>Height</b> :</th>
-                  <td  className="dotted-row"> {formatHeight(familyDetails.height)}</td>
+                <tr className='trt3'>
+                  <th className='rowt3'><b>Height</b> :</th>
+                  <td className='columnt3'>{formatHeight(familyDetails.height)}</td>
                 </tr>
-                <tr>
-                    <th><b>Blood Group</b> :</th>
-                  <td className="dotted-row"> {personalInfo.bloodGroup}</td>
+                <tr className='trt3'>
+                  <th className='rowt3'><b>Blood Group</b> :</th>
+                  <td className='columnt3'>{personalInfo.bloodGroup}</td>
                 </tr>
-                <tr>
-                    <th><b>Complexion</b> : </th>
-                  <td className="dotted-row">{personalInfo.complextion}</td>
+                <tr className='trt3'>
+                  <th className='rowt3'><b>Complexion</b> :</th>
+                  <td className='columnt3'>{personalInfo.complextion}</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div className="family-detail right-t3">
-            <table>
-              <tbody>
-                <tr>
-                    <th> <b>Brother</b>  :</th>
-                  <td className="dotted-row"> {familyDetails.siblings.brother.number} (Elder-{familyDetails.siblings.brother.marriageNum})
-                  </td>
+          <div className="family-detail right">
+            <table  className='tablet3'>
+              <tbody  className='tbodyt3'>
+                <tr className='trt3'>
+                  <th className='rowt3'><b>Brother</b> :</th>
+                  <td className='columnt3'>{familyDetails.siblings.brother.number} (Elder-{familyDetails.siblings.brother.marriageNum})</td>
                 </tr>
-                <tr>
-                    <th><b>Education</b> :</th>
-                  <td className="dotted-row"> {qualification.Education}</td>
+                <tr className='trt3'>
+                  <th className='rowt3'><b>Education</b> :</th>
+                  <td className='columnt3'>{qualification.Education}</td>
                 </tr>
-                <tr>
-                    <th><b>Profession</b> :</th>
-                  <td className="dotted-row">{personalInfo.Profession}</td>
+                <tr className='trt3'>
+                  <th className='rowt3'><b>Profession</b> :</th>
+                  <td className='columnt3'>{personalInfo.Profession}</td>
                 </tr>
-                <tr>
-                    <th><b>Income</b> : </th>
-                  <td className="dotted-row">{occupation.Income}</td>
+                <tr className='trt3' >
+                  <th className='rowt3'><b>Income</b> :</th>
+                  <td className='columnt3'>{occupation.Income}</td>
                 </tr>
               </tbody>
             </table>
           </div>
-      </div>
-
-      <div className="divider2-t3"></div>
-    <div className="address-t3">
+        </FamilyDetails>
+      </InnerBorder>
+      <T3Divider/>
+      <Address>
+      <div className="address">
         Address
       </div>
-      <div className='below-heading-t3'>
-      <div className='name-t3'>
-      <p>{personalInfo.name}.{qualification.Education}.{qualification.fieldOfStudy}.({personalInfo.Profession})</p>
-      </div>
-      <div className="residential-address-t3">
-        <p className="address-t3"> {residentialAddress.address} {residentialAddress.landmark} {residentialAddress.hometown}, {residentialAddress.city}, {residentialAddress.stateName} {residentialAddress.pincode} {residentialAddress.nationality}</p>
-      </div>
-      <div className="contact-details-t3">
-        <p className="address-t3">&nbsp;&nbsp;&nbsp;&nbsp;Mobile : {contactDetails.contactNumber} &nbsp;&nbsp; &nbsp;&nbsp; WhatsApp Number : {contactDetails.whatsappNumber}</p>
-      </div> 
-      </div>
-      </Header>
-    </MainContainer>
+      </Address>
+      <T3Bottom>
+          {personalInfo.name}.{qualification.Education}.{qualification.fieldOfStudy}.({personalInfo.Profession})
+      </T3Bottom>
+        <T3ResidentialAddress>
+        {residentialAddress.address} {residentialAddress.landmark} {residentialAddress.hometown}, {residentialAddress.city}, {residentialAddress.stateName} {residentialAddress.pincode} {residentialAddress.nationality}
+        </T3ResidentialAddress>
+        <T3ContactDetails>
+        Mobile : {contactDetails.contactNumber} &nbsp;&nbsp; &nbsp;&nbsp; WhatsApp Number : {contactDetails.whatsappNumber}
+        </T3ContactDetails>
+    </Container>
   );
 };
 

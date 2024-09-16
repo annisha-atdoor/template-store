@@ -1,9 +1,39 @@
 import React from 'react';
+import {
+  T2A4Container,
+  T2InnerBorder,
+  T2MainHeader,
+  T2TableCell,
+  T2TableRow,
+  T2PersonalDetailTable,
+  T2DetailsContainer,
+  T2Four,
+  T2Three,
+  T2Heading,
+  T2LogoImage,
+  T2SubHeading,
+  T2PersonalDetailLeft,
+  T2PersonalDetailRight,
+  T2Divider,
+  T2FamilyDetailsContainer,
+  T2Address,
+  T2ResidentialAddress,
+  T2SecHeading,
+  T2ContactDetails,
+  DistrictContainer,
+  District,
+  FamilyInfo,
+  Name,
+  HorizontalRule,
+  DasaBalanceContainer,
+  DasaBalanceText,
+  T2Dividers,
+  StyledParagraph
+} from './template-two.styled';
 import image from './images/img1.svg';
-import './template-two.css';
-import HoroscopeBoxes from "../horoscope-boxes/horoscope-boxes.js";
-import './template-two.styled';
 import images from './images/logo.svg';
+import HoroscopeBoxes from "../horoscope-boxes/horoscope-boxes.js";
+import './template-two.css';
 import '../horoscope-boxes/horoscope-boxes.css';
 
 const formatHeight = (height) => {
@@ -11,8 +41,12 @@ const formatHeight = (height) => {
   return `${feet}'${inches}"`;
 };
 
+const getName = (selectedGender) => {
+  return selectedGender === 'male' ? 'Sri Math Punya Kumara Selvan' : 'Sri Math Punya Kumari Selvi';
+}
 
 const HoroscopeTwo = ({
+  selectedGender,
   birthDetails,
   horoscopeDetails,
   familyDetails,
@@ -25,166 +59,162 @@ const HoroscopeTwo = ({
 }) => {
 
   return (
-    <div className="a4-t2">
-      <div className="inner-border-t2">
-        <div className="main-header-t2">
-          <div className="top-heading-t2">
-            <div className="heading-container-t2">
-              <div className="corner-image-container-t2">
-                <img src={image} alt="img1" className="corner-image-t2" />
-              </div>
-              <div className="heading-t2">
-                <img src={images} alt="Canvas Logo" className="logo-image-t2" />
-                Sri Pachaivaiyamman Thunai
-              </div>
-            </div>
-            <div className="sub-heading-t2">
-              Janani Janma Sowkyanam Varathanee Kulasumbathaam<br />
-              Padhavi Pooorva Punyanaam Likyathe Janma Pathrika
-            </div>
-          </div>
-          <div className="details-container-t2">
-            <div className="personal-detail-left-t2">
-              <table  className='personal-t2'>
-                <tbody>
-                  <tr>
-                    <th scope="row">Date of Birth</th>
-                    <td>{birthDetails.dob.dateOfBirth}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Tamil Year</th>
-                    <td>{birthDetails.tamilYear}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Tamil Month</th>
-                    <td>{birthDetails.tamilMonth}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Tamil Date</th>
-                    <td>{birthDetails.tamilDate}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Day</th>
-                    <td>{birthDetails.dob.day}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Birth Time</th>
-                    <td>{birthDetails.dob.time}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="personal-detail-right-t2">
-              <table>
-                <tbody>
-                  <tr>
-                    <th scope="row">Naaligai</th>
-                    <td>{horoscopeDetails.naaligai}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Birth Star</th>
-                    <td>{horoscopeDetails.BirthStar}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Rasi</th>
-                    <td>{horoscopeDetails.rasi}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Thithi</th>
-                    <td>{horoscopeDetails.thithi}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Lagnam</th>
-                    <td>{horoscopeDetails.lagnam}</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Place Of Birth</th>
-                    <td>{birthDetails.dob.placeOfBirth}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div className="divider1-t2"></div>
-          <div className="below-heading-t2">
-            Thirunelveli District
-          </div>
-          <div className="second-name-t2">
-            S/o Late <b> Mr. Ponmani - Mrs. Porselvi</b>
-          </div>
-          <div className="third-line-t2">
-            <p className="name-third-t2"><b> Kamalesh P</b></p>
-          </div>
-          <hr className="table-divider-t2" />
-        </div>
-        <div className="mid-heading-t2">
-          <h3><span className="blue-text-t2">Mars </span> <span className="brown-text-t2">Dasa Balance : 6months</span></h3>
-        </div>
+    <T2A4Container>
+      <T2InnerBorder>
+        <T2MainHeader>
+            <T2Heading>
+             <T2LogoImage src={images} alt="Canvas Logo" />
+           </T2Heading>
+           <T2SecHeading>
+                 Sri Pachaivaiyamman Thunai
+           </T2SecHeading>
+          <T2SubHeading>
+            Janani Janma Sowkyanam Varathanee Kulasumbathaam<br />
+            Padhavi Pooorva Punyanaam Likyathe Janma Pathrika
+          </T2SubHeading>
+        </T2MainHeader>
+        <T2DetailsContainer>
+         <T2PersonalDetailLeft>
+         <T2PersonalDetailTable>
+        <tbody>
+          <T2TableRow>
+            <th>Date of Birth</th>
+            <T2TableCell>{birthDetails.dob.dateOfBirth}</T2TableCell>
+          </T2TableRow>
+          <T2TableRow>
+            <th>Tamil Year</th>
+            <T2TableCell>{birthDetails.tamilYear}</T2TableCell>
+          </T2TableRow>
+          <T2TableRow>
+            <th>Tamil Month</th>
+            <T2TableCell>{birthDetails.tamilMonth}</T2TableCell>
+          </T2TableRow>
+          <T2TableRow>
+            <th>Tamil Date</th>
+            <T2TableCell>{birthDetails.tamilDate}</T2TableCell>
+          </T2TableRow>
+          <T2TableRow>
+            <th>Day</th>
+            <T2TableCell>{birthDetails.dob.day}</T2TableCell>
+          </T2TableRow>
+          <T2TableRow>
+            <th>Birth Time</th>
+            <T2TableCell>{birthDetails.dob.time}</T2TableCell>
+          </T2TableRow>
+        </tbody>
+      </T2PersonalDetailTable>
+    </T2PersonalDetailLeft>
+    <T2PersonalDetailRight>
+      <T2PersonalDetailTable>
+        <tbody>
+          <T2TableRow>
+            <th>Naaligai</th>
+            <T2TableCell>{horoscopeDetails.naaligai}</T2TableCell>
+          </T2TableRow>
+          <T2TableRow>
+            <th>Birth Star</th>
+            <T2TableCell>{horoscopeDetails.BirthStar}</T2TableCell>
+          </T2TableRow>
+          <T2TableRow>
+            <th>Rasi</th>
+            <T2TableCell>{horoscopeDetails.rasi}</T2TableCell>
+          </T2TableRow>
+          <T2TableRow>
+            <th>Thithi</th>
+            <T2TableCell>{horoscopeDetails.thithi}</T2TableCell>
+          </T2TableRow>
+          <T2TableRow>
+            <th>Lagnam</th>
+            <T2TableCell>{horoscopeDetails.lagnam}</T2TableCell>
+          </T2TableRow>
+          <T2TableRow>
+            <th>Place Of Birth</th>
+            <T2TableCell>{birthDetails.dob.placeOfBirth}</T2TableCell>
+          </T2TableRow>
+        </tbody>
+      </T2PersonalDetailTable>
+    </T2PersonalDetailRight>
+  </T2DetailsContainer>
+        <T2Divider />
+        <DistrictContainer>
+          <District>Thirunelveli District</District>
+         <FamilyInfo>S/o Late <b>Mr. Ponmani - Mrs. Porselvi</b></FamilyInfo>
+         <Name> <span>{getName(selectedGender)}.</span><b> Kamalesh P</b></Name>
+         <HorizontalRule />
+       </DistrictContainer>
+    <DasaBalanceContainer>
+ <DasaBalanceText>
+    <span>Mars</span>
+    <span>Dasa Balance : 6 months</span>
+  </DasaBalanceText>
+        </DasaBalanceContainer>
         <HoroscopeBoxes/>
-        <div className="middle-t2">
+        <T2Three>
           <h3>Namadhayam : Kamalesh . P</h3>
-        </div>
-        <div className="third-t2">
-          <p className='t2-third'>Gothram : Shiva Gothram &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Madhulam : dfdfdsa</p>
-        </div>
-        <div className="divider-t2"></div>
-        <div className="family-details-t2">
-          <div className="family-detail left-t2">
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <b>Father</b> : {familyDetails.fatherAlive} - <b>Mother</b> : {familyDetails.motherAlive}
-                  </td>
-                </tr>
-                <tr>
-                  <td><b>Height</b> : {formatHeight(familyDetails.height)}</td>
-                </tr>
-                <tr>
-                  <td><b>Blood Group</b> : {personalInfo.bloodGroup}</td>
-                </tr>
-                <tr>
-                  <td><b>Complexion</b> : {personalInfo.complextion}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="family-detail right-t2">
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <b>Brother</b>  : {familyDetails.siblings.brother.number} (Elder-{familyDetails.siblings.brother.marriageNum})
-                  </td>
-                </tr>
-                <tr>
-                  <td><b>Education</b> : {qualification.Education}</td>
-                </tr>
-                <tr>
-                  <td><b>Profession</b> : {personalInfo.Profession}</td>
-                </tr>
-                <tr>
-                  <td><b>Income</b> : {occupation.Income}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <div className="divider2-t2"></div>
-      <div className="address-t2">
-        Address
-      </div>
-      <div className='name-qua-t2'>
-      <p  className="t2-address">{personalInfo.name}.{qualification.Education}.{qualification.fieldOfStudy}.({personalInfo.Profession})</p>
-      </div>
-      <div className="residential-address-t2">
-        <p className="address-t2"> {residentialAddress.address} {residentialAddress.landmark} {residentialAddress.hometown}, {residentialAddress.city}, {residentialAddress.stateName} {residentialAddress.pincode} {residentialAddress.nationality}</p>
-      </div>
-      <div className="contact-details-t2">
-        <p className="address-t2">&nbsp;&nbsp;&nbsp;&nbsp;Mobile : {contactDetails.contactNumber} &nbsp;&nbsp; &nbsp;&nbsp; WhatsApp Number : {contactDetails.whatsappNumber}</p>
-      </div> 
-    </div>
+        </T2Three>
+      <T2Four>
+          <p>Gothram : Shiva Gothram &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Madhulam : dfdfdsa</p>
+        </T2Four>
+        <T2Divider/>
+        <T2FamilyDetailsContainer>
+        <div>
+        <table>
+         <tbody>
+        <T2TableRow>
+          <th><b>Father</b> :</th>
+          <T2TableCell> {familyDetails.fatherAlive} - <b>Mother</b> : {familyDetails.motherAlive}</T2TableCell>
+        </T2TableRow>
+        <T2TableRow>
+          <th><b>Height</b> : </th>
+          <T2TableCell>{formatHeight(familyDetails.height)}</T2TableCell>
+        </T2TableRow>
+        <T2TableRow>
+          <th><b>Blood Group</b> :</th>
+          <T2TableCell> {personalInfo.bloodGroup}</T2TableCell>
+        </T2TableRow>
+        <T2TableRow>
+          <th><b>Complexion</b> : </th>
+          <T2TableCell>{personalInfo.complextion}</T2TableCell>
+        </T2TableRow>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <table>
+      <tbody>
+        <T2TableRow>
+          <th><b>Brother</b>  : </th>
+          <T2TableCell> {familyDetails.siblings.brother.number} (Elder-{familyDetails.siblings.brother.marriageNum})</T2TableCell>
+        </T2TableRow>
+        <T2TableRow>
+          <th><b>Education</b> : </th>
+          <T2TableCell>{qualification.Education}</T2TableCell>
+        </T2TableRow>
+        <T2TableRow>
+          <th><b>Profession</b> :</th>
+          <T2TableCell> {personalInfo.Profession}</T2TableCell>
+        </T2TableRow>
+        <T2TableRow>
+          <th><b>Income</b> : </th>
+          <T2TableCell>{occupation.Income}</T2TableCell>
+        </T2TableRow>
+      </tbody>
+    </table>
+  </div>
+       </T2FamilyDetailsContainer>
+      </T2InnerBorder>
+      <T2Dividers/>
+      <T2Address>Address</T2Address>
+      <StyledParagraph>
+          {personalInfo.name}.{qualification.Education}.{qualification.fieldOfStudy}.({personalInfo.Profession})
+        </StyledParagraph>
+      <T2ResidentialAddress>
+         {residentialAddress.address} {residentialAddress.landmark} {residentialAddress.hometown}, {residentialAddress.city}, {residentialAddress.stateName} {residentialAddress.pincode} {residentialAddress.nationality}
+      </T2ResidentialAddress>
+      <T2ContactDetails>
+        Mobile : {contactDetails.contactNumber} &nbsp;&nbsp; WhatsApp Number : {contactDetails.whatsappNumber}
+      </T2ContactDetails>
+    </T2A4Container>
   );
 };
 
