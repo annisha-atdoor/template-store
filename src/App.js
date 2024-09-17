@@ -1,95 +1,50 @@
-import React, { useEffect, useState } from "react";
-import "./App.css";
-import englishData from "./data/english.json";
-import tamilData from "./data/tamil.json";
-import imageEnabled from "./images/enabled-bg.svg";
-import leftimage from "./images/left-image.svg";
-import images from "./images/logo.svg";
-import TemplateOne from "./templates/horoscopes/template-one/template-one";
-import TemplateThree from "./templates/horoscopes/template-three/template-three";
-import TemplateTwo from "./templates/horoscopes/template-two/template-two";
+import React, { useState } from 'react';
+import TemplateOne from './templates/horoscopes/template-one/index.js';
+import TemplateTwo from './templates/horoscopes/template-two/index.js'; 
+import TemplateThree from './templates/horoscopes/template-three/index.js'; 
+import TemplateFour from './templates/horoscopes/template-four/index.js';
+import TemplateFive from './templates/horoscopes/template-five/index.js';
+import jsonData from './data/english.json';
+import './App.css';
 
 const App = () => {
-  const [language, setLanguage] = useState("english");
-  const [selectedTemplate, setSelectedTemplate] = useState("template-one");
-  const [isEnabled, setIsEnabled] = useState(true);
-  const [data, setData] = useState(englishData);
+  const [selectedTemplate, setSelectedTemplate] = useState('');
 
-  useEffect(() => {
-    setData(language === "english" ? englishData : tamilData);
-  }, [language]);
+  const handleTemplateChange = (event) => {
+    setSelectedTemplate(event.target.value);
+  };
 
-  const handleRadioChange = (event) => {
-    setIsEnabled(event.target.value === "enable");
+  const renderTemplate = () => {
+    switch (selectedTemplate) {
+      case 'templateOne':
+        return <TemplateOne {...jsonData} />;
+      case 'templateTwo':
+        return <TemplateTwo {...jsonData} />;
+      case 'templateThree': 
+        return <TemplateThree {...jsonData} />;
+      case 'templateFour': 
+        return <TemplateFour {...jsonData} />;
+        case 'templateFive': 
+        return <TemplateFive {...jsonData} />;
+      default:
+        return null;
+    }
   };
 
   return (
-    <div>
-      <select onChange={(e) => setLanguage(e.target.value)} value={language}>
-        <option value="english">English</option>
-        <option value="tamil">Tamil</option>
-      </select>
-      <select
-        onChange={(e) => setSelectedTemplate(e.target.value)}
-        value={language}
-      >
-        <option value="template-one">One</option>
-        <option value="template-two">Two</option>
-        <option value="template-three">Three</option>
-        <option value="template-four">Four</option>
-        <option value="template-five">Five</option>
-      </select>
-      <p>{selectedTemplate}</p>
-      {selectedTemplate === "template-one" && <TemplateOne />}
-      {selectedTemplate === "template-two" && <TemplateTwo />}
-      {selectedTemplate === "template-three" && <TemplateThree />}
-      <div>
-        <input
-          type="radio"
-          name="bg-toggle"
-          id="enable"
-          value="enable"
-          checked={isEnabled}
-          onChange={handleRadioChange}
-        />
-        <label htmlFor="enable">Enable</label>
-        <input
-          type="radio"
-          name="bg-toggle"
-          id="disable"
-          value="disable"
-          checked={!isEnabled}
-          onChange={handleRadioChange}
-        />
-        <label htmlFor="disable">Disable</label>
+    <div className="App">
+      <div className="template-dropdown">
+        <label htmlFor="template-select">Choose a template: </label>
+        <select id="template-select" onChange={handleTemplateChange} value={selectedTemplate}>
+          <option value="">Select a template</option>
+          <option value="templateOne">Template One</option>
+          <option value="templateTwo">Template Two</option>
+          <option value="templateThree">Template Three</option>
+          <option value="templateFour">Template Four</option> 
+          <option value="templateFive">Template Five</option> 
+        </select>
       </div>
-      <div className="a4">
-        <div
-          style={{ backgroundImage: `url(${isEnabled ? imageEnabled : ""})` }}
-        >
-          <img
-            src={images}
-            alt="Canvas Logo"
-            width="3%"
-            className="logo-image"
-          />
-          <img
-            src={leftimage}
-            alt="Canvas Logo"
-            width="3%"
-            className="left-image"
-          />
-          {/* <Horoscope
-            data={data}
-            isEnabled={isEnabled}
-            imageSrc={imageBetweenTables}
-          /> */}
-          <div className="container">
-            <div className="container-body"></div>
-            <br />
-          </div>
-        </div>
-      </div>
+      {renderTemplate()}
     </div>
   );
 };
