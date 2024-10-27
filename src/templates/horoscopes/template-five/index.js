@@ -15,7 +15,6 @@ const IndexFive = () => {
       setSelectedData(tamilData);
     }
   };
-
   return (
     <div>
       <select onChange={handleLanguageChange}>
