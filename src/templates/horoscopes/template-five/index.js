@@ -21,7 +21,7 @@ const IndexFive = () => {
         <option value="english">English</option>
         <option value="tamil">Tamil</option>
       </select>
-
+      
       <HoroscopeFive
         birthDetails={selectedData.birthDetails}
         horoscopeDetails={selectedData.horoscopeDetails}
